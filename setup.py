@@ -28,7 +28,7 @@ setup(
     url="https://github.com/kiancross/pixy/",
     version=pixy.metadata.version,
     licence="Apache-2.0",
-    packages=["pixy"],
+    packages=["pixy", "pixy.colours"],
     description="Add colour and style to terminal text",
     long_description=long_description,
     long_description_content_type="text/markdown",
