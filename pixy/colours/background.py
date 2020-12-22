@@ -2,7 +2,7 @@
 # Copyright (c) 2020 Kian Cross
 #
 
-from pixy.EscapeSequence import EscapeSequence
+from pixy.escape_sequence import EscapeSequence
 from pixy.colours import constants
 
 black = EscapeSequence(constants.BACKGROUND_START_CODE + constants.BLACK)

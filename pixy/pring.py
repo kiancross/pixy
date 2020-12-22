@@ -2,7 +2,7 @@
 # Copyright (c) 2020 Kian Cross
 #
 
-from pixy.EscapeSequence import EscapeSequence
+from pixy.escape_sequence import EscapeSequence
 
 
 reset = EscapeSequence(0)
