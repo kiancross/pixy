@@ -12,11 +12,13 @@ def test_min_boundary():
     with pytest.raises(ValueError):
         pixy.Font(-1)
 
+
 def test_max_boundary():
     assert isinstance(pixy.Font(8), pixy.Font)
 
     with pytest.raises(ValueError):
         pixy.Font(9)
+
 
 def test_code():
     font = pixy.Font(5)
