@@ -11,7 +11,7 @@ help:
 
 .PHONY: test
 test:
-	python -m unittest tests
+	pytest --cov=pixy --cov-report=term-missing tests
 
 .PHONY: style-check
 style-check:
