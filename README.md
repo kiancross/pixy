@@ -6,13 +6,13 @@ pixy
 
 pixy is a Python library for adding colour and style to terminal text.
 
-* [Getting Started][#getting-started]
-  * [Installation][#installation]
-  * [Usage][#usage]
-* [Documentation][#documentation]
-* [Examples][#examples]
-* [Tests][#tests]
-* [License][#license]
+* [Getting Started](#getting-started)
+  * [Installation](#installation)
+  * [Usage](#usage)
+* [Documentation](#documentation)
+* [Examples](#examples)
+* [Tests](#tests)
+* [License](#license)
 
 Terminal output can be styled using [ANSII escape code][ansii_escape_codes]. pixy provides a simple to use yet comprehensive wrapper, abstracting away the complexities.
 
