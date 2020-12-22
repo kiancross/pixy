@@ -2,6 +2,7 @@ pixy
 ====
 
 [![PyPI version](https://badge.fury.io/py/pixy.svg)](https://pypi.org/project/pixy/)
+![Continuous Integration](https://github.com/kiancross/pixy/workflows/Continuous%20Integration/badge.svg)
 
 pixy is a Python library for adding colour and style to terminal text.
 
@@ -306,14 +307,11 @@ print()
 Tests
 -----
 
-Unit tests are written using the unittest module. They can be run by executing `python3 -m unittest tests`.
+Unit tests are written using the unittest module. They can be run by executing `make test`.
 
-Code should not show any warnings when run through `flake8`:
-
-```
-flake8 . --count --exit-zero --max-complexity=10 --max-line-length=80 --statistics
-```
+`make style-fix` can be run to fix any code styling issues.
 
 License
 -------
-pixy is licensed under the Apache-2.0 license.
+
+pixy is licensed under the [MIT license](https://github.com/kiancross/pixy/blob/master/LICENSE).
