@@ -11,7 +11,7 @@ help:
 
 .PHONY: test
 test:
-	python3 -m unittest tests
+	python -m unittest tests
 
 .PHONY: style-check
 style-check:
