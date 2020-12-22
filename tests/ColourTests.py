@@ -1,17 +1,5 @@
 #
-# Copyright 2020 Kian Cross
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# Copyright (c) 2020 Kian Cross
 #
 
 import unittest
@@ -19,7 +7,6 @@ import pixy
 
 
 class ColourTests(unittest.TestCase):
-
     def test_black_foreground(self):
         self.assertEqual(pixy.foreground.black.code, "\x1b[30m")
 
@@ -69,19 +56,13 @@ class ColourTests(unittest.TestCase):
         self.assertEqual(pixy.background.white.code, "\x1b[47m")
 
     def test_extended_min_boundary(self):
-        self.assertTrue(isinstance(
-            pixy.ExtendedColour(0),
-            pixy.ExtendedColour
-        ))
+        self.assertTrue(isinstance(pixy.ExtendedColour(0), pixy.ExtendedColour))
 
         with self.assertRaises(ValueError):
             pixy.ExtendedColour(-1)
 
     def test_extended_max_boundary(self):
-        self.assertTrue(isinstance(
-            pixy.ExtendedColour(255),
-            pixy.ExtendedColour
-        ))
+        self.assertTrue(isinstance(pixy.ExtendedColour(255), pixy.ExtendedColour))
 
         with self.assertRaises(ValueError):
             pixy.ExtendedColour(255 + 1)
@@ -99,10 +80,7 @@ class ColourTests(unittest.TestCase):
         self.assertEqual(colour.code, "\x1b[48;5;10m")
 
     def test_true_min_boundary(self):
-        self.assertTrue(isinstance(
-            pixy.TrueColour(0, 0, 0),
-            pixy.TrueColour
-        ))
+        self.assertTrue(isinstance(pixy.TrueColour(0, 0, 0), pixy.TrueColour))
 
         with self.assertRaises(ValueError):
             pixy.TrueColour(-1, 0, 0)
@@ -114,10 +92,7 @@ class ColourTests(unittest.TestCase):
             pixy.TrueColour(0, 0, -1)
 
     def test_true_max_boundary(self):
-        self.assertTrue(isinstance(
-            pixy.TrueColour(255, 255, 255),
-            pixy.TrueColour
-        ))
+        self.assertTrue(isinstance(pixy.TrueColour(255, 255, 255), pixy.TrueColour))
 
         with self.assertRaises(ValueError):
             pixy.TrueColour(256, 255, 255)

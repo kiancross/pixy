@@ -2,6 +2,7 @@ pixy
 ====
 
 [![PyPI version](https://badge.fury.io/py/pixy.svg)](https://pypi.org/project/pixy/)
+![Status](https://github.com/kiancross/pixy/workflows/Test/badge.svg)
 
 pixy is a Python library for adding colour and style to terminal text.
 
@@ -316,4 +317,5 @@ flake8 . --count --exit-zero --max-complexity=10 --max-line-length=80 --statisti
 
 License
 -------
-pixy is licensed under the Apache-2.0 license.
+
+pixy is licensed under the [MIT license](https://github.com/kiancross/pixy/blob/master/LICENSE).
