@@ -26,7 +26,7 @@ jobs:
       run: pip install -r development-requirements.txt
 
     - name: Code style
-      run: make lint
+      run: make style-check
 
     - name: Unit tests
       run: make test
