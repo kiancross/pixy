@@ -17,26 +17,29 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Get pip cache dir
-        id: pip-cache
-        run: |
-          echo "::set-output name=dir::$(pip cache dir)"
+      - uses: Gr1N/setup-poetry@v4
 
-      - name: pip cache
+      - name: Get poetry cache dir
+        id: poetry-cache
+        run: |
+          echo "::set-output name=dir::$(poetry config cache-dir)"
+
+      - name: Poetry cache
         uses: actions/cache@v2
         with:
-          path: ${{ steps.pip-cache.outputs.dir }}
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          path: ${{ steps.poetry-cache.outputs.dir }}
+          key: ${{ runner.os }}-poetry-${{ hashFiles('**/pyproject.toml') }}
           restore-keys: |
-            ${{ runner.os }}-pip-
+            ${{ runner.os }}-poetry-
 
       - name: Install dependencies
-        run: pip install -r development-requirements.txt
+        run: poetry install
 
       - name: Code style
         run: make style-check

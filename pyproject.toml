@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "pixy"
+version = "1.0.2"
+description = "Add colour and style to terminal text"
+readme = "README.md"
+authors = ["Kian Cross <kian@kiancross.co.uk>"]
+maintainers = ["Kian Cross <kian@kiancross.co.uk>"]
+license = "MIT"
+homepage = "https://github.com/kiancross/pixy"
+repository = "https://github.com/kiancross/pixy"
+documentation = "https://github.com/kiancross/pixy"
+keywords = ["colour", "color", "terminal", "style", "text"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+
+[tool.poetry.dev-dependencies]
+black = "^20.8b1"
+mypy = "^0.790"
+pytest = "^6.2.1"
+pytest-cov = "^2.10.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
