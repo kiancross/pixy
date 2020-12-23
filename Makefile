@@ -12,7 +12,7 @@ help:
 
 .PHONY: test
 test:
-	poetry run pytest --cov=pixy --cov-report=term-missing tests
+	poetry run pytest --cov=pixy --cov-report=term-missing --cov-report=xml tests
 
 .PHONY: style-check
 style-check:
