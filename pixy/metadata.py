@@ -2,4 +2,4 @@
 # Copyright (c) 2020 Kian Cross
 #
 
-version = "1.0.0"
+version = "1.0.1"
