@@ -23,6 +23,8 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
+      - uses: Gr1N/setup-poetry@v4
+
       - name: Get poetry cache dir
         id: poetry-cache
         run: |
