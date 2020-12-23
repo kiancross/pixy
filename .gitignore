@@ -9,3 +9,4 @@ pixy.egg-info
 build/
 dist/
 .coverage
+coverage.xml

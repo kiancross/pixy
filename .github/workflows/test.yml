@@ -24,6 +24,9 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - uses: Gr1N/setup-poetry@v4
+      
+      - name: Install dependencies
+        run: poetry install -vvv
 
       - name: Get poetry cache dir
         id: poetry-cache
@@ -34,12 +37,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ steps.poetry-cache.outputs.dir }}
-          key: ${{ runner.os }}-poetry-${{ hashFiles('**/pyproject.toml') }}
+          key: poetry-${{ runner.os }}-${{ hashFiles('**/pyproject.toml') }}
           restore-keys: |
-            ${{ runner.os }}-poetry-
-
-      - name: Install dependencies
-        run: poetry install
+            poetry-${{ runner.os }}-
 
       - name: Code style
         run: make style-check
@@ -52,3 +52,5 @@ jobs:
 
       - name: Upload coverage
         uses: codecov/codecov-action@v1
+        with:
+          fail_ci_if_error: true

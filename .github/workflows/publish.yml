@@ -29,9 +29,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ steps.poetry-cache.outputs.dir }}
-          key: ${{ runner.os }}-poetry-${{ hashFiles('**/pyproject.toml') }}
+          key: poetry-${{ runner.os }}-${{ hashFiles('**/pyproject.toml') }}
           restore-keys: |
-            ${{ runner.os }}-poetry-
+            poetry-${{ runner.os }}-
 
       - name: Build pixy
         run: poetry build
