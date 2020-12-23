@@ -313,13 +313,6 @@ for colour in blue_to_red:
 print()
 ```
 
-Tests
------
-
-Unit tests are written using the unittest module. They can be run by executing `make test`.
-
-`make style-fix` can be run to fix any code styling issues.
-
 License
 -------
 
