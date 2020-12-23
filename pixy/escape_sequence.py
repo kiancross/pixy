@@ -4,6 +4,7 @@
 
 from typing import Tuple, Any
 
+
 class EscapeSequence(Tuple[int]):
 
     __ESCAPE_CHARACTER = "\x1b"
@@ -14,7 +15,7 @@ class EscapeSequence(Tuple[int]):
             if not isinstance(code, int):
                 raise TypeError("All codes must be integers.")
 
-        return super(EscapeSequence, cls).__new__(cls, codes) # type: ignore
+        return super(EscapeSequence, cls).__new__(cls, codes)  # type: ignore
 
     def __add__(self, other: Any) -> "EscapeSequence":
         return EscapeSequence(*super().__add__(other))
