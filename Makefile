@@ -12,16 +12,16 @@ help:
 
 .PHONY: test
 test:
-	pytest --cov=pixy --cov-report=term-missing tests
+	poetry run pytest --cov=pixy --cov-report=term-missing tests
 
 .PHONY: style-check
 style-check:
-	black --check .
+	poetry run black --check .
 
 .PHONY: style-fix
 style-fix:
-	black .
+	poetry run black .
 
 .PHONY: types
 types:
-	mypy --strict pixy
+	poetry run mypy --strict pixy
