@@ -39,7 +39,7 @@ jobs:
             ${{ runner.os }}-poetry-
 
       - name: Setup tmate session
-        if: matrix.python-version == 3.8 && matrix.os == 'windows-latest'
+        if: matrix.os == 'windows-latest'
         uses: mxschmitt/action-tmate@v3
 
       - name: Install dependencies
