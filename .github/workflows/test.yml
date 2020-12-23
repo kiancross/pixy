@@ -16,23 +16,36 @@ jobs:
         python-version: [3.6, 3.7, 3.8]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
 
-    - name: Install dependencies
-      run: pip install -r development-requirements.txt
+      - name: Get pip cache dir
+        id: pip-cache
+        run: |
+          echo "::set-output name=dir::$(pip cache dir)"
 
-    - name: Code style
-      run: make style-check
+      - name: pip cache
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.pip-cache.outputs.dir }}
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
 
-    - name: Unit tests
-      run: make test
+      - name: Install dependencies
+        run: pip install -r development-requirements.txt
 
-    - name: Types
-      run: make types
+      - name: Code style
+        run: make style-check
 
-    - name: Upload coverage
-      uses: codecov/codecov-action@v1
+      - name: Unit tests
+        run: make test
+        
+      - name: Check types
+        run: make types
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v1

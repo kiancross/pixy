@@ -20,7 +20,7 @@ setup(
     description="Add colour and style to terminal text",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    python_requires="~=3.5",
+    python_requires="~=3.6",
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Environment :: Console",
