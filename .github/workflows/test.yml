@@ -39,7 +39,7 @@ jobs:
             ${{ runner.os }}-poetry-
 
       - name: Install dependencies
-        run: poetry install
+        run: poetry install -vvv
 
       - name: Code style
         run: make style-check
