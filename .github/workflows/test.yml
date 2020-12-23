@@ -24,23 +24,12 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - uses: Gr1N/setup-poetry@v4
+      
+      - name: Version
+        run: poetry --version
 
-      - name: Get poetry cache dir
-        id: poetry-cache
-        run: |
-          echo "::set-output name=dir::$(poetry config cache-dir)"
-
-      - name: Poetry cache
-        uses: actions/cache@v2
-        with:
-          path: ${{ steps.poetry-cache.outputs.dir }}
-          key: ${{ runner.os }}-poetry-${{ hashFiles('**/pyproject.toml') }}
-          restore-keys: |
-            ${{ runner.os }}-poetry-
-
-      - name: Setup tmate session
-        if: matrix.os == 'windows-latest'
-        uses: mxschmitt/action-tmate@v3
+      - name: Help
+        run: poetry --help
 
       - name: Install dependencies
         run: poetry install -vvv
