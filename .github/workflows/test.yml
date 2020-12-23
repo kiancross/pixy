@@ -25,14 +25,21 @@ jobs:
 
       - uses: Gr1N/setup-poetry@v4
       
-      - name: Version
-        run: poetry --version
-
-      - name: Help
-        run: poetry --help
-
       - name: Install dependencies
         run: poetry install -vvv
+
+      - name: Get poetry cache dir
+        id: poetry-cache
+        run: |
+          echo "::set-output name=dir::$(poetry config cache-dir)"
+
+      - name: Poetry cache
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.poetry-cache.outputs.dir }}
+          key: poetry-${{ runner.os }}-${{ hashFiles('**/pyproject.toml') }}
+          restore-keys: |
+            poetry-${{ runner.os }}-
 
       - name: Code style
         run: make style-check
