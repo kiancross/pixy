@@ -2,7 +2,7 @@ pixy
 ====
 
 [![PyPI version](https://badge.fury.io/py/pixy.svg)](https://pypi.org/project/pixy/)
-![Continuous Integration](https://github.com/kiancross/pixy/workflows/Continuous%20Integration/badge.svg)
+[![Continuous Integration](https://github.com/kiancross/pixy/actions/workflows/test.yml/badge.svg?event=push)](https://github.com/kiancross/pixy/actions/workflows/test.yml)
 [![codecov](https://codecov.io/gh/kiancross/pixy/branch/master/graph/badge.svg?token=P490PT52VR)](https://codecov.io/gh/kiancross/pixy)
 
 pixy is a Python library for adding colour and style to terminal text.
