@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: "3.x"
       
-      - uses: Gr1N/setup-poetry@v4
+      - uses: Gr1N/setup-poetry@v7
 
       - name: Get poetry cache dir
         id: poetry-cache
