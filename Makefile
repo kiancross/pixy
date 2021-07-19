@@ -7,7 +7,7 @@ help:
 	@echo "Commands:"
 	@echo "    test           Run unit tests"
 	@echo "    style-check    Check code style using black"
-	@echo "    fix-fix        Fix any code styling issues using black"
+	@echo "    style-fix      Fix any code styling issues using black"
 	@echo "    types          Check types"
 
 .PHONY: test
