@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pixy"
-version = "1.0.2"
+version = "1.0.3"
 description = "Add colour and style to terminal text"
 readme = "README.md"
 authors = ["Kian Cross <kian@kiancross.co.uk>"]
